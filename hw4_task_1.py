@@ -12,6 +12,11 @@ def transport_matrix(matrix: list) -> list:
     функция для транспонирования матрицы
     >>>  transport_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 0, 1, 2]])
     [[1, 5, 9], [2, 6, 0], [3, 7, 1], [4, 8, 2]]
+
+   >>>  transport_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 0]])
+   Traceback (most recent call last):
+   ...
+   IndexError: list index out of range
     """
     rows = len(matrix)
     columns = len(matrix[0])
@@ -25,12 +30,17 @@ def transport_matrix(matrix: list) -> list:
 def transport_matrix_zip(matrix: list) -> list:
     """
     функция для транспонирования матрицы
-    >>>  transport_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 0, 1, 2]])
-    [[1, 5, 9], [2, 6, 0], [3, 7, 1], [4, 8, 2]]
+    >>>  transport_matrix_zip([[1, 2, 3, 4], [5, 6, 7, 8], [9, 0, 1, 2]])
+    [(1, 5, 9), (2, 6, 0), (3, 7, 1), (4, 8, 2)]
+
+    >>> transport_matrix_zip(55)
+    Traceback (most recent call last):
+    ...
+    TypeError: zip() argument after * must be an iterable, not int
+
     """
     return list(zip(*matrix))
 
 
 if __name__ == '__main__':
-    print(transport_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 0, 1, 2]]))
     doctest.testmod(verbose=True)
