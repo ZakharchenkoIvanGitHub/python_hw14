@@ -2,8 +2,9 @@
 Создайте класс Матрица. Добавьте методы для: - вывода на печать,
 сравнения, сложения, умножения матриц
 """
-class Matrix:
 
+
+class Matrix:
 
     def __init__(self, rows, cols):
         self.rows = rows
